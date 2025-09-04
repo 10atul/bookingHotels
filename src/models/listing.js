@@ -4,8 +4,8 @@ const listingSchema = new mongoose.Schema({
   title: String,
   description: String,
   image: {
-    type: String,
-    set: (v) => (v === "" ? "" : v),
+    filename: String,
+    url: String
   },
   price: Number,
   location: String,
