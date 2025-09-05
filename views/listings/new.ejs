@@ -1,28 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h3>Create a New Listing</h3>
+<% layout("/layouts/boilerplate") %>
+<body>
+  <div class="pt-23 md:max-w-6xl mx-auto">
+    <h3 class="text-3xl font-semibold text-center mb-3">
+      Create a New Listing
+    </h3>
     <form method="post" action="/listings">
-      <input type="text" name="listing[title]" placeholder="Enter Title" />
-      <br /><br />
-      <textarea name="listing[description]" id=""></textarea>
-      <br /><br />
-      <input type="number" name="listing[price]" placeholder="enter price" />
-      <br /><br />
-      <input
-        type="text"
-        name="listing[location]"
-        placeholder="enter location"
-      />
-      <br /><br />
-      <input type="text" name="listing[country]" placeholder="counter name" />
-      <br /><br />
-      <button>Add</button>
+      <div class="px-10 grid grid-cols-6 gap-6">
+        <div class="flex flex-col gap-1  col-start-1 col-end-7">
+          <label for="title">Title</label>
+          <input
+            class="border px-2 py-3 rounded-md border-gray-400"
+            type="text"
+            name="listing[title]"
+            placeholder="Enter Title"
+          />
+        </div>
+        <div class="flex flex-col gap-1  col-start-1 col-end-7">
+          <label for="title">Description</label>
+          <textarea
+            class="border px-2 py-3 rounded-md border-gray-400"
+            name="listing[description]"
+            id=""
+          >
+          </textarea>
+        </div>
+        <div class="flex flex-col gap-1  col-start-1 col-end-7">
+          <label for="title">Image URL</label>
+          <input
+            class="border px-2 py-3 rounded-md border-gray-400"
+            type="text"
+            name="listing[image.url]"
+            placeholder="Enter Title"
+          />
+        </div>
+        <div class="flex flex-col gap-1  col-start-1 col-end-7 md:col-start-1 md:col-end-3">
+          <label for="title">Price</label>
+          <input
+            class="border px-2 py-3 rounded-md border-gray-400 "
+            type="number"
+            name="listing[price]"
+            placeholder="enter price"
+          />
+        </div>
+        <div class="flex flex-col gap-1  col-start-1 col-end-7 md:col-start-3 md:col-span-4">
+          <label for="title">Country</label>
+          <input
+            class="border px-2 py-3 rounded-md border-gray-400"
+            type="text"
+            name="listing[country]"
+            placeholder="counter name"
+          />
+        </div>
+        <div class="flex flex-col gap-1 col-start-1 col-end-7">
+          <label for="title">Location</label>
+          <input
+            class="border px-2 py-3 rounded-md border-gray-400"
+            type="text"
+            name="listing[location]"
+            placeholder="enter location"
+          />
+        </div>
+      </div>
+      <div class="px-10 mt-10 mb-10">
+        <button
+          class="bg-[#fe424d] text-white font-semibold texl-lg py-4 rounded-md w-full"
+        >
+          Add
+        </button>
+      </div>
     </form>
-  </body>
-</html>
+  </div>
+</body>

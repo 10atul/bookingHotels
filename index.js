@@ -6,11 +6,14 @@ const Listing = require("./src/models/listing");
 const port = process.env.PORT || 3000;
 const path = require("path");
 const methodOverride = require("method-override");
+const ejsMate = require('ejs-mate');
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+app.engine('ejs', ejsMate);
+app.use(express.static(path.join(__dirname, "/public")));
 
 connectToDB();
 

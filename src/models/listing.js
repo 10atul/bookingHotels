@@ -7,7 +7,10 @@ const listingSchema = new mongoose.Schema({
     filename: String,
     url: String
   },
-  price: Number,
+  price: {
+    type: Number,
+    default: 0,
+  },
   location: String,
   country: String,
 });

@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+.fa-compass {
+  font-size: 2rem;
+  color: #fe424d;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container{
+  flex: 1;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+
+@media (min-width: 470px) {
+  .custom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .custom-width {
+    width: 15rem;
+  }
+}

@@ -1,19 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WanderLust</title>
-  </head>
-  <body>
-    <h3>All Listings</h3>
-    <form method="get" action="/listings/new">
-      <button>Create</button>
-    </form>
-    <ul>
-      <% for(let listing of allListings){ %>
-      <li><a href="/listings/<%= listing._id %>"><%= listing.title %></a></li>
-      <% } %>
-    </ul>
-  </body>
-</html>
+<% layout("/layouts/boilerplate") %>
+<body>
+  <div
+    class="grid grid-cols-1 grid-rows-[auto] custom md:!grid-cols-3 lg:!grid-cols-4 xl:!grid-cols-5 py-20 place-content-center max-w-7xl mx-auto"
+  >
+    <% for(let listing of allListings){ %>
+    <a href="/listings/<%= listing._id %>">
+      <div
+        class="w-[18rem] custom-width my-[0.5rem] mx-[.5rem] h-fit overflow-hidden mb-5 transform hover:scale-105 transition-transform duration-300 active:scale-95"
+      >
+        <img
+          src="<%= listing.image.url %>"
+          alt="listing_image"
+          class="h-48 w-full object-cover rounded-md"
+        />
+        <div class="">
+          <p class="font-semibold"><%= listing.title %></p>
+          <p> &#8377; <%= listing.price ? listing.price.toLocaleString("en-IN") : "N/A" %> / night</p>
+        </div>
+      </div>
+    </a>
+
+    <% } %>
+  </div>
+</body>
